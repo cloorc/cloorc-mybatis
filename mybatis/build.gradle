@@ -17,6 +17,8 @@ dependencies {
     compile project(':mybatis-api')
 
     compile libraries.springBootStarterJdbc
+    compile libraries.springCloudStarterConfig
+    compile libraries.springCloudConfigurationProcessor
     compile libraries.mybatis
     compile libraries.mybatisSpring
     compile libraries.mariadbJavaClient
