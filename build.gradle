@@ -1,7 +1,18 @@
-group 'xyz.cloorc'
-version '1.0-SNAPSHOT'
+buildscript {
+    repositories {
+        maven {
+            url 'http://repo.maven.apache.org/maven2/'
+        }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE"
+    }
+}
 
 apply plugin: 'groovy'
+
+group 'xyz.cloorc'
+version '1.0-SNAPSHOT'
 
 repositories {
     mavenLocal()
@@ -10,8 +21,36 @@ repositories {
     }
 }
 
+ext.libraries = [
+    springBootStarterJdbc: dependencies.create('org.springframework.boot:spring-boot-starter-jdbc:1.3.3.RELEASE') {
+        exclude module: "commons-logging"
+        force = true
+    },
+    springContext: dependencies.create('org.springframework:spring-context:4.2.5.RELEASE') {
+        force = true
+    },
+    mybatis: dependencies.create('org.mybatis:mybatis:3.4.0') {
+        force = true
+    },
+    mybatisSpring: dependencies.create('org.mybatis:mybatis-spring:1.3.0') {
+        force = true
+    },
+    mariadbJavaClient: dependencies.create('org.mariadb.jdbc:mariadb-java-client:1.2.3') {
+        force = true
+    },
+    groovyAll: dependencies.create('org.codehaus.groovy:groovy-all:2.4.6'){
+        force = true
+    },
+    lombok: dependencies.create('org.projectlombok:lombok:1.16.8'){
+        force = true
+    },
+    junit: dependencies.create('junit:junit:4.11') {
+        force = true
+    }
+]
+
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.6'
-    compile 'org.projectlombok:lombok:1.16.8'
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile libraries.groovyAll
+    compile libraries.lombok
+    testCompile libraries.junit
 }

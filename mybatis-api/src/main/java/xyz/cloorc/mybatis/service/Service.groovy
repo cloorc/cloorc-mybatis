@@ -1,5 +1,7 @@
 package xyz.cloorc.mybatis.service
 
+import xyz.cloorc.mybatis.model.Model
+
 /**
  * Created by wittcnezh on 2016/04/26:14:59.
  * Title: Simple
@@ -8,5 +10,6 @@ package xyz.cloorc.mybatis.service
  *
  * @author &lt;a href="mailto:wittcnezh@foxmail.com"/&gt;
  */
-class Service {
+public interface Service {
+    Model get (Object id);
 }

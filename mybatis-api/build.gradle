@@ -1,15 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+
 group 'xyz.cloorc'
 version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
 
 sourceCompatibility = 1.5
 
 repositories {
-    mavenCentral()
+    mavenLocal()
+    maven {
+        url 'http://repo.maven.apache.org/maven2/'
+    }
 }
 
 dependencies {
-    compile group: 'org.springframework', name: 'spring-context', version: '4.2.5.RELEASE'
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    runtime libraries.springContext
+    compile libraries.lombok
+    compile libraries.groovyAll
+    testCompile libraries.junit
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
 }

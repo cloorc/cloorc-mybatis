@@ -11,7 +11,7 @@ import lombok.Data
  * @author <a href="mailto:wittcnezh@foxmail.com"/>
  */
 @Data
-class Model {
+public class Model {
     private Long id
     private String name
     private Integer age
