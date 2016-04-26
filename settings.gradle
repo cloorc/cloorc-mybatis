@@ -1,0 +1,4 @@
+rootProject.name = 'cloorc-mybatis'
+include 'mybatis-api'
+include 'mybatis'
+
