@@ -16,13 +16,13 @@ repositories {
 dependencies {
     runtime libraries.springContext
     compile libraries.lombok
-    compile libraries.groovyAll
+    compile libraries.groovy
     testCompile libraries.junit
 }
 
 sourceSets {
     main {
-        java {
+        groovy {
             srcDir 'src/main/java'
         }
         resources {

@@ -31,34 +31,21 @@ ext.libraries = [
         force = true
     },
     springCloudConfigurationProcessor: dependencies.create('org.springframework.boot:spring-boot-configuration-processor:1.3.3.RELEASE') {
-    exclude module: "commons-logging"
-    force = true
-},
-    springContext: dependencies.create('org.springframework:spring-context:4.2.5.RELEASE') {
+        exclude module: "commons-logging"
         force = true
     },
-    mybatis: dependencies.create('org.mybatis:mybatis:3.4.0') {
-        force = true
-    },
-    mybatisSpring: dependencies.create('org.mybatis:mybatis-spring:1.3.0') {
-        force = true
-    },
-    mariadbJavaClient: dependencies.create('org.mariadb.jdbc:mariadb-java-client:1.2.3') {
-        force = true
-    },
-    groovyAll: dependencies.create('org.codehaus.groovy:groovy-all:2.4.6'){
-        force = true
-    },
-    lombok: dependencies.create('org.projectlombok:lombok:1.16.8'){
-        force = true
-    },
-    junit: dependencies.create('junit:junit:4.11') {
-        force = true
-    }
+    springContext: dependencies.create('org.springframework:spring-context:4.2.5.RELEASE') { force = true },
+    mybatis: dependencies.create('org.mybatis:mybatis:3.4.0') { force = true },
+    mybatisSpring: dependencies.create('org.mybatis:mybatis-spring:1.3.0') { force = true },
+    mariadbJavaClient: dependencies.create('org.mariadb.jdbc:mariadb-java-client:1.2.3') { force = true },
+    groovy: dependencies.create('org.codehaus.groovy:groovy:2.4.6') { force = true },
+    lombok: dependencies.create('org.projectlombok:lombok:1.16.8') { force = true },
+    junit: dependencies.create('junit:junit:4.11') { force = true },
+    slf4j: dependencies.create('org.slf4j:slf4j-api:1.7.13') {force = true}
 ]
 
 dependencies {
-    compile libraries.groovyAll
+    compile libraries.groovy
     compile libraries.lombok
     testCompile libraries.junit
 }

@@ -1,8 +1,20 @@
 group 'xyz.cloorc'
 version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
 apply plugin: 'spring-boot'
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+sourceSets {
+    main {
+        groovy {
+            srcDir 'src/main/java'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}
 
 sourceCompatibility = 1.5
 
@@ -16,6 +28,8 @@ repositories {
 dependencies {
     compile project(':mybatis-api')
 
+    compile libraries.groovy
+    compile libraries.slf4j
     compile libraries.springBootStarterJdbc
     compile libraries.springCloudStarterConfig
     compile libraries.springCloudConfigurationProcessor
@@ -35,15 +49,4 @@ bootRun {
 bootRepackage {
     mainClass = 'xyz.cloorc.mybatis.MybatisApplication'
     executable = true
-}
-
-sourceSets {
-    main {
-        java {
-            srcDir 'src/main/groovy'
-        }
-        resources {
-            srcDir 'src/main/resources'
-        }
-    }
 }
