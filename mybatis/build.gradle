@@ -40,9 +40,11 @@ bootRepackage {
     mainClass = 'xyz.cloorc.mybatis.MybatisApplication'
     executable = true
 }
+
 compileJava {
     options.encoding = encoding
+    def agentpath = '-agentpath lombok.launch.Agent'
     //this is useful only if source written in java.
-    //if (options.compilerArgs != null) options.compilerArgs.add('lombok.launch.Agent')
-    //else options.compilerArgs = ['lombok.launch.Agent']
+    if (options.compilerArgs != null) options.compilerArgs.add(agentpath)
+    else options.compilerArgs = [agentpath]
 }

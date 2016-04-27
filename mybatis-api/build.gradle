@@ -31,3 +31,18 @@ sourceSets {
         }
     }
 }
+build {
+    dependencies {
+        compile libraries.lombok
+    }
+}
+compileJava {
+    options.encoding = encoding
+    def agentpath = '-agentpath:lombok.launch.Agent'
+    //this is useful only if source written in java.
+    if (options.compilerArgs != null) options.compilerArgs.add(agentpath)
+    else options.compilerArgs = [agentpath]
+}
+compileGroovy {
+    groovyOptions.javaAnnotationProcessing = true
+}
