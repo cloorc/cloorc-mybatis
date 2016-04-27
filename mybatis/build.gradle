@@ -5,17 +5,6 @@ apply plugin: 'spring-boot'
 apply plugin: 'java'
 apply plugin: 'groovy'
 
-sourceSets {
-    main {
-        groovy {
-            srcDir 'src/main/java'
-        }
-        resources {
-            srcDir 'src/main/resources'
-        }
-    }
-}
-
 sourceCompatibility = 1.5
 
 repositories {
@@ -50,4 +39,10 @@ bootRun {
 bootRepackage {
     mainClass = 'xyz.cloorc.mybatis.MybatisApplication'
     executable = true
+}
+compileJava {
+    options.encoding = encoding
+    //this is useful only if source written in java.
+    //if (options.compilerArgs != null) options.compilerArgs.add('lombok.launch.Agent')
+    //else options.compilerArgs = ['lombok.launch.Agent']
 }

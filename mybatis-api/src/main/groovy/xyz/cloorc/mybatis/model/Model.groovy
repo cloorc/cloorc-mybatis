@@ -8,10 +8,10 @@ import lombok.Data
  * Description: Example
  * Copyright: Copyright(c) 2016
  *
- * @author <a href="mailto:wittcnezh@foxmail.com"/>
+ * @author &lt;a href="mailto:wittcnezh@foxmail.com"/&gt;
  */
 @Data
-public class Model {
+public class Model implements Serializable {
     private Long id
     private String name
     private Integer age
