@@ -53,3 +53,5 @@
 ## Features
 
 > 1. Mybatis Annotation with Spring Boot auto-configuration.
+> 1. All Groovy implementation.
+> 1. Gradle dependency management.
