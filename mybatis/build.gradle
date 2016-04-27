@@ -35,6 +35,7 @@ dependencies {
     compile libraries.springCloudConfigurationProcessor
     compile libraries.mybatis
     compile libraries.mybatisSpring
+    compile libraries.mybatisSpringBoot
     compile libraries.mariadbJavaClient
 
     testCompile libraries.junit
