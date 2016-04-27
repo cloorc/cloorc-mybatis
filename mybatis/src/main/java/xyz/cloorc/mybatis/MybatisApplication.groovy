@@ -1,6 +1,8 @@
 package xyz.cloorc.mybatis
 
 import lombok.extern.slf4j.Slf4j
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
@@ -18,9 +20,9 @@ import xyz.cloorc.mybatis.service.Service
  *
  * @author &lt;a href="mailto:wittcnezh@foxmail.com"/&gt;
  */
-@Slf4j
 @SpringBootApplication
 class MybatisApplication {
+    final Logger log = LoggerFactory.getLogger(MybatisApplication.class)
     public static void main(String[] args) {
         SpringApplication.run(MybatisApplication.class, args)
     }

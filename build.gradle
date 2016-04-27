@@ -42,7 +42,7 @@ ext.libraries = [
     groovy: dependencies.create('org.codehaus.groovy:groovy:2.4.6') { force = true },
     lombok: dependencies.create('org.projectlombok:lombok:1.16.8') { force = true },
     junit: dependencies.create('junit:junit:4.11') { force = true },
-    slf4j: dependencies.create('org.slf4j:slf4j-api:1.7.13') {force = true}
+    slf4j: dependencies.create('org.slf4j:slf4j-api:1.7.21') {force = true}
 ]
 
 dependencies {
