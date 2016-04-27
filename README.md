@@ -1,4 +1,4 @@
-# Project for Verification Mybatis 3+
+# Project for Verification of Mybatis 3+
 
  Mybatis 3+ Example
 
