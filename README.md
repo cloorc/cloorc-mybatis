@@ -1,4 +1,4 @@
-# Project for Verification Mybatis 3+
+# Project for Verification of Mybatis 3+
 
  Mybatis 3+ Example
 
@@ -53,3 +53,5 @@
 ## Features
 
 > 1. Mybatis Annotation with Spring Boot auto-configuration.
+> 1. All Groovy implementation.
+> 1. Gradle dependency management.
